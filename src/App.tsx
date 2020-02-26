@@ -1,9 +1,10 @@
 import React from 'react'
+import Store from './Store'
 
 export default function App() {
   return (
-    <div>
-      <h1>Blabla</h1>
-    </div>
+    <Store>
+      <h1>PokeGame</h1>
+    </Store>
   )
 }

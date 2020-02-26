@@ -10,5 +10,5 @@ export default function Store({children}: Props) {
 }
 
 interface Props {
-  children: ReactChildren
+  children: {}
 }

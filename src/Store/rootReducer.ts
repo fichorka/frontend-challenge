@@ -3,24 +3,38 @@ export default function(state, action) {
     case 'ADD_POKEMON':
       return {
         ...state,
-        pokemon: {
-          ...state.pokemon,
-          data: [...state.data, action.pokemon]
-        }
+        data: [...state.data, action.pokemon]
       }
     case 'GUESS_POKEMON': {
       const newData = state.data.slice()
       const pokemon = newData.filter(p => p.id === action.id)[0]
       const i = newData.indexOf(pokemon)
-      if (i !== -1) newData[i].guessed = true
+      if (i !== -1) newData[i].isGuessed = true
 
       return {
         ...state,
-        pokemon: {
-          ...state.pokemon,
-          data: newData
-        }
+        data: newData
       }
     }
+    case 'SET_GUESS_TARGET':
+      return {
+        ...state,
+        guessTarget: action.id
+      }
+    case 'SET_IS_CUR_POKEMON_GUESSED':
+      return {
+        ...state,
+        isCurPokemonGuessed: action.isCurPokemonGuessed
+      }
+    case 'SET_IS_DATA_COMPLETE':
+      return {
+        ...state,
+        isDataComplete: action.isDataComplete
+      }
+    case 'SET_IS_POKEDEX_COMPLETE':
+      return {
+        ...state,
+        isPokedexComplete: action.isPokedexComplete
+      }
   }
 }
