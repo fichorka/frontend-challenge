@@ -1,32 +1,28 @@
 import {useEffect} from 'react'
 import {
-  addPokemon,
-  setGuessTarget,
-  setIsCurPokemonGuessed,
+  storePokemon,
+  newGuessTarget,
+  nextTurn,
   setIsDataComplete
 } from '../Store/actions'
 import {fetchPokemon} from '../API/fetchPokemon'
 import {randomPokemonId} from './Utils'
-import {selectPokemon} from '../Store/selectors'
+import {getPokemon} from '../Store/selectors'
 
 // controls
 export default function(state, dispatch) {
   useEffect(() => {
-    if (state.isCurPokemonGuessed && !state.isPokedexComplete) {
+    if (state.shouldTakeNextGuess && !state.isPokedexComplete) {
       const id = randomPokemonId(state)
-      if (!selectPokemon(state, id)) {
+      if (!getPokemon(state, id)) {
         // if pokemon isn't found, fetch it:
         fetchPokemon(id).then(res => {
-          dispatch(addPokemon(res))
-          dispatch(setIsCurPokemonGuessed(false))
-          dispatch(setGuessTarget(res.id))
+          dispatch(storePokemon(res))
           if (state.data.length >= 151) dispatch(setIsDataComplete(true))
         })
-      } else {
-        // else, just change guessTarget
-        dispatch(setIsCurPokemonGuessed(false))
-        dispatch(setGuessTarget(id))
       }
+      dispatch(nextTurn(false))
+      dispatch(newGuessTarget(id))
     }
-  }, [state.isCurPokemonGuessed])
+  }, [state.shouldTakeNextGuess])
 }

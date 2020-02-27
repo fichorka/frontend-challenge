@@ -1,0 +1,113 @@
+@import 'modules/pokedex';
+
+html {
+  font-size: 3.5vw;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  overflow-x: hidden;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.image-container {
+  box-sizing: border-box;
+  margin: .5rem auto 2rem;
+  padding: .5rem;
+  background: #ccc;
+  border-radius: 50%;
+  width: 11rem;
+  height: 11rem;
+  &:hover {
+    background: #aaa;
+  }
+}
+
+.image-container__image {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+}
+
+.form {
+  margin: 1rem auto;
+  width: 80%;
+  display: block;
+}
+
+.form__user-input {
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: .3rem .5rem;
+  width: 70%;
+  margin: 0;
+  border: none;
+  border: .1rem solid #ccc;
+  border-radius: .3rem 0 0 .3rem;
+  outline: none;
+  &:focus {
+    border-color: #aaa;
+  }
+}
+
+.button {
+  padding: .3rem .5rem;
+  font-size: 1rem;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 0;
+  border: none;
+  background: #ccc;
+  border: .1rem solid #ccc;
+  height: 100%;
+  &:hover {
+    background: #aaa;
+    border-color: #aaa;
+  }
+}
+
+.button--fullsize {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  @extend .button--rounded;
+}
+
+.button--rounded {
+  border-radius: .3rem;
+}
+
+.button--rounded-left {
+  border-radius: .3rem 0 0 .3rem;
+}
+
+.button--rounded-right {
+  border-radius: 0 .3rem .3rem 0;
+}
+
+.button--row {
+  margin-top: .3rem;
+  border-radius: .3rem;
+  // width: 100%;
+  margin-left: 70%;
+}
+
+@media screen and (orientation: landscape) {
+  html {
+    font-size: 1.6vw !important;
+  }
+  .form {
+    width: 16rem;
+  }
+  body {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+}

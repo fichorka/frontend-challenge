@@ -1,10 +1,13 @@
 export type StoreType = [StateInterface, CallableFunction]
 export interface StateInterface {
   data: Pokemon[]
+  selected: number
+  totalPokemon: 151
   guessTarget: number
-  isCurPokemonGuessed: boolean
+  shouldTakeNextGuess: boolean
   isDataComplete: boolean
   isPokedexComplete: boolean
+  isPokedexVisible: boolean
 }
 export interface Pokemon {
   id: number

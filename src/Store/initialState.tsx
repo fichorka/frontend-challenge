@@ -1,7 +1,12 @@
-export const initialState = {
+import {StateInterface} from '../TypeDeclarations'
+
+export const initialState: StateInterface = {
   data: [],
+  selected: null,
+  totalPokemon: 151,
   guessTarget: null,
-  isCurPokemonGuessed: true,
+  shouldTakeNextGuess: true,
   isDataComplete: false,
-  isPokedexComplete: false
+  isPokedexComplete: false,
+  isPokedexVisible: false
 }

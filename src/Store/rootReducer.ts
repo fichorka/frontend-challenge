@@ -21,10 +21,10 @@ export default function(state, action) {
         ...state,
         guessTarget: action.id
       }
-    case 'SET_IS_CUR_POKEMON_GUESSED':
+    case 'SHOULD_TAKE_NEXT_GUESS':
       return {
         ...state,
-        isCurPokemonGuessed: action.isCurPokemonGuessed
+        shouldTakeNextGuess: action.shouldTakeNextGuess
       }
     case 'SET_IS_DATA_COMPLETE':
       return {
@@ -35,6 +35,16 @@ export default function(state, action) {
       return {
         ...state,
         isPokedexComplete: action.isPokedexComplete
+      }
+    case 'TOGGLE_POKEDEX':
+      return {
+        ...state,
+        isPokedexVisible: !state.isPokedexVisible
+      }
+    case 'SELECT_POKEMON':
+      return {
+        ...state,
+        selected: action.id
       }
   }
 }

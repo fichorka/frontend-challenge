@@ -1,4 +1,4 @@
-import {selectPokemon} from '../../Store/selectors'
+import {getPokemon} from '../../Store/selectors'
 
 // returns pokemon id that hasn't been guessed yet
 export function randomPokemonId(state) {
@@ -6,7 +6,7 @@ export function randomPokemonId(state) {
   let pokemon
   do {
     id = Math.floor(1 + Math.random() * 150)
-    pokemon = selectPokemon(state, id)
+    pokemon = getPokemon(state, id)
   } while (pokemon && pokemon.isGuessed)
   return id
 }

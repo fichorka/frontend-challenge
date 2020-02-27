@@ -1,19 +1,19 @@
 import {Pokemon} from '../TypeDeclarations'
 
-export function addPokemon(pokemon: Pokemon) {
+export function storePokemon(pokemon: Pokemon) {
   return {type: 'ADD_POKEMON', pokemon}
 }
 
-export function guessPokemon(id: number) {
+export function pokemonGuessed(id: number) {
   return {type: 'GUESS_POKEMON', id: id}
 }
 
-export function setGuessTarget(id: number) {
+export function newGuessTarget(id: number) {
   return {type: 'SET_GUESS_TARGET', id: id}
 }
 
-export function setIsCurPokemonGuessed(isCurPokemonGuessed: boolean) {
-  return {type: 'SET_IS_CUR_POKEMON_GUESSED', isCurPokemonGuessed}
+export function nextTurn(shouldTakeNextGuess: boolean) {
+  return {type: 'SHOULD_TAKE_NEXT_GUESS', shouldTakeNextGuess}
 }
 
 export function setIsDataComplete(isDataComplete: boolean) {
@@ -22,4 +22,12 @@ export function setIsDataComplete(isDataComplete: boolean) {
 
 export function setIsPokedexComplete(isPokedexComplete: boolean) {
   return {type: 'SET_IS_POKEDEX_COMPLETE', isPokedexComplete}
+}
+
+export function togglePokedex() {
+  return {type: 'TOGGLE_POKEDEX'}
+}
+
+export function selectPokemon(id) {
+  return {type: 'SELECT_POKEMON', id}
 }
