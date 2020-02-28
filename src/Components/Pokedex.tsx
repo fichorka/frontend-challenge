@@ -15,7 +15,6 @@ export default function Pokedex() {
     const pok = p && p.isGuessed ? p : {id: i, name: 'unknown'}
     pokedex.push(pok)
   }
-  const displayClass = state.isPokedexVisible ? ' pokedex--on' : ''
   const selectedPokemon = getPokemon(state, state.selected) || {
     id: 0,
     name: 'unknown',
@@ -26,13 +25,14 @@ export default function Pokedex() {
     dispatch(selectPokemon(id))
   }
   return (
-    <div className={'pokedex' + displayClass}>
+    <div className={'pokedex'}>
       <header className="pokedex-header">
         <span className="pokedex-header__label">My Pokedex</span>
         <span className="pokedex-header__exit-btn" onClick={handleClick}>
           x
         </span>
       </header>
+      {/* extract pokedex-details into a new component */}
       <div className="pokedex-details">
         <div className="pokedex-details__image">
           <PokemonImage src={selectedPokemon.imageUrl} />
@@ -56,6 +56,7 @@ export default function Pokedex() {
           </div>
         </div>
       </div>
+      {/* extract pokedex-list into a new component */}
       <div className={'pokedex__list'}>
         {pokedex.map(p => (
           <PokemonImage

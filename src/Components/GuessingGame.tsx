@@ -4,6 +4,7 @@ import {getPokemon} from '../Store'
 import usePokemonFetch from '../Hooks/usePokemonFetch'
 import PokemonImage from './PokemonImage'
 import {pokemonGuessed, nextTurn} from '../Store/actions'
+import PokedexButton from './PokedexButton'
 
 export default function GuessingGame() {
   const [state, dispatch] = useContext(StoreContext)
@@ -29,6 +30,7 @@ export default function GuessingGame() {
 
   return (
     <>
+      <h1 className="page-title">GUESS THAT POKEMON!</h1>
       <PokemonImage src={pokemon ? pokemon.imageUrl : ''} />
       <form className="form" onSubmit={tryToGues}>
         <input
@@ -51,6 +53,7 @@ export default function GuessingGame() {
           {getPokemon(state, state.guessTarget).name}
         </span>
       )}
+      <PokedexButton />
     </>
   )
 }

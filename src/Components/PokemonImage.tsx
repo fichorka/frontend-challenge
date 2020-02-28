@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react'
 export default function PokemonImage(props) {
   const src = props.src || '(unknown)'
   const modifier = props.modifier
-  const handleClick = props.handleClick
+  const handleClick = props.handleClick || function() {}
   const id = props.id
   return (
     <div
