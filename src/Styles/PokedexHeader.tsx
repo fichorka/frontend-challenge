@@ -9,7 +9,7 @@ export default function PokedexHeader() {
   }
   return (
     <header className="pokedex-header">
-      <span className="pokedex-header__label">My Pokedex</span>
+      <span className="pokedex-header__title">My Pokedex</span>
       <span className="pokedex-header__exit-btn" onClick={handleClick}>
         x
       </span>

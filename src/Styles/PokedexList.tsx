@@ -23,7 +23,7 @@ export default function PokedexList() {
           id={p.id}
           handleClick={handlePokemonClick}
           src={p.imageUrl}
-          modifier="pokedex"
+          modifier="list"
         />
       ))}
     </div>

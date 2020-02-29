@@ -10,7 +10,7 @@ export default function PokedexDetails() {
     stats: {hp: 0, speed: 0, attack: 0, defense: 0}
   }
   return (
-    <div className="pokedex-details">
+    <div className="pokedex__details">
       {/* <div className="pokedex-details__image"> */}
       <PokemonImage src={selectedPokemon.imageUrl} modifier="details" />
       {/* </div> */}
