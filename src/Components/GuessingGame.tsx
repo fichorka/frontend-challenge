@@ -31,7 +31,10 @@ export default function GuessingGame() {
   return (
     <>
       <h1 className="page-title">GUESS THAT POKEMON!</h1>
-      <PokemonImage src={pokemon ? pokemon.imageUrl : ''} />
+      <PokemonImage
+        src={pokemon ? pokemon.imageUrl : ''}
+        modifier="guessing-game"
+      />
       <form className="form" onSubmit={tryToGues}>
         <input
           className="form__user-input"
