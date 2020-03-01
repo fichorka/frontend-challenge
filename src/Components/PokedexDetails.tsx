@@ -5,19 +5,30 @@ import PokedexStat from './PokedexStat'
 
 export default function PokedexDetails() {
   const state = useContext(StoreContext)[0]
-  const selectedPokemon = getPokemon(state, state.selected) || {
-    id: 0,
-    name: 'unknown',
-    stats: {hp: 0, speed: 0, attack: 0, defense: 0}
-  }
+  const selectedPokemon = getPokemon(state, state.selected) || {}
+  const {
+    id,
+    name,
+    stats = {hp: 0, speed: 0, attack: 0, defense: 0}
+  } = selectedPokemon
   return (
     <div className="pokedex__details">
-      <PokemonImage pokemon={selectedPokemon} modifier="details" />
+      <div className="profile">
+        <PokemonImage pokemon={selectedPokemon} modifier="details" />
+        <span className="bio">
+          {selectedPokemon.id && selectedPokemon.id !== 0 && (
+            <>
+              <span className="bio__id">#{id} </span>
+              <span className="bio__name">{name.toUpperCase()}</span>
+            </>
+          )}
+        </span>
+      </div>
       <div className="stats">
-        <PokedexStat label="HP" value={selectedPokemon.stats.hp} />
-        <PokedexStat label="SPEED" value={selectedPokemon.stats.speed} />
-        <PokedexStat label="ATTACK" value={selectedPokemon.stats.attack} />
-        <PokedexStat label="DEFENSE" value={selectedPokemon.stats.defense} />
+        <PokedexStat label="HP" value={stats.hp} />
+        <PokedexStat label="SPEED" value={stats.speed} />
+        <PokedexStat label="ATTACK" value={stats.attack} />
+        <PokedexStat label="DEFENSE" value={stats.defense} />
       </div>
     </div>
   )
