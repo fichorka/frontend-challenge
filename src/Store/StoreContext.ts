@@ -1,5 +1,5 @@
 import React, {createContext} from 'react'
 import {initialState} from './initialState'
-import {StoreType} from '../TypeDeclarations'
+import {Store} from '../TypeDeclarations'
 
-export default createContext<StoreType>([initialState, function() {}])
+export default createContext<Store>([initialState, function() {}])

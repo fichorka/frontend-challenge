@@ -1,0 +1,32 @@
+// (1/2) Default rules
+
+.form {
+  margin: 1rem 0;
+  display: block;
+}
+
+.form__user-input {
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: .3rem .5rem;
+  width: 70%;
+  margin: 0;
+  border: none;
+  border: .1rem solid #ccc;
+  outline: none;
+  &:focus {
+    border-color: #aaa;
+  }
+}
+
+.form__user-input--rounded-left {
+  border-radius: .3rem 0 0 .3rem;
+}
+
+// (2/2) Landscape rules
+
+@media screen and (orientation: landscape) {
+  .form {
+    width: 16rem;
+  }
+}

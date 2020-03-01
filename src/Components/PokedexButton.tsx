@@ -9,7 +9,11 @@ export default function PokedexButton() {
     console.log(state)
   }
   return (
-    <button onClick={onClick} type="button" className="button button--fullsize">
+    <button
+      onClick={onClick}
+      type="button"
+      className="button button--rounded button--fullsize"
+    >
       MY POKEDEX
     </button>
   )

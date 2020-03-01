@@ -1,8 +1,7 @@
-import React, {useContext} from 'react'
-import {StoreContext} from '../Store'
-import PokedexList from '../Styles/PokedexList'
-import PokedexDetails from '../Styles/PokedexDetails'
-import PokedexHeader from '../Styles/PokedexHeader'
+import React from 'react'
+import PokedexList from './PokedexList'
+import PokedexDetails from './PokedexDetails'
+import PokedexHeader from './PokedexHeader'
 
 export default function Pokedex() {
   return (

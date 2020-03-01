@@ -1,5 +1,5 @@
-export type StoreType = [StateInterface, CallableFunction]
-export interface StateInterface {
+export type StoreT = [State, CallableFunction]
+export interface State {
   data: Pokemon[]
   selected: number
   totalPokemon: 151
@@ -12,9 +12,9 @@ export interface StateInterface {
 export interface Pokemon {
   id: number
   name: string
-  isGuessed: boolean
-  imageUrl: string
-  stats: {
+  isGuessed?: boolean
+  imageUrl?: string
+  stats?: {
     hp: number
     speed: number
     attack: number

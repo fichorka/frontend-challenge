@@ -1,12 +1,13 @@
-import React, {useReducer, ReactChildren} from 'react'
+import React, {useReducer} from 'react'
 import rootReducer from './rootReducer'
 import {initialState} from './initialState'
-import {StoreType} from '../TypeDeclarations'
+import {StoreT} from '../TypeDeclarations'
 import StoreContext from './StoreContext'
 
 export default function Store({children}: Props) {
-  const Store: StoreType = useReducer(rootReducer, initialState)
-  return <StoreContext.Provider value={Store}>{children}</StoreContext.Provider>
+  // store instantiates here:
+  const store: StoreT = useReducer(rootReducer, initialState)
+  return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
 }
 
 interface Props {

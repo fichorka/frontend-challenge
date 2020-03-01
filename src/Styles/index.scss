@@ -1,123 +1,57 @@
-@import 'modules/pokedex';
+@import 'pokedex';
+@import 'pokemonImage';
+@import 'guessingGameForm';
+@import 'buttons';
+
+// (1/2) Default rules:
 
 html {
+  // set up rem unit (1rem = root font-size)
   font-size: 2.5vh;
 }
 
 body {
   margin: 0;
   font-family: Arial;
+  min-width: 20rem;
+  background: #eee;
 }
 
 .body--dark{
   background: #666;
 }
 
-.page-title {
+.title {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
-.image-container {
-  &:hover {
-    background: #aaa;
-  }
-}
-
-.image-container--guessing-game {
-  position: relative;
-  box-sizing: border-box;
-  margin: .5rem auto 2rem;
-  padding: .5rem;
-  background: #ccc;
-  border-radius: 50%;
-  width: 11rem;
-  height: 11rem;
-}
-
-.image-container__image {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  margin: 5%;
+.game {
   width: 90%;
-  height: 90%;
-}
-
-.form {
-  margin: 1rem auto;
-  width: 80%;
-  display: block;
-}
-
-.form__user-input {
-  font-size: 1rem;
-  box-sizing: border-box;
-  padding: .3rem .5rem;
-  width: 70%;
-  margin: 0;
-  border: none;
-  border: .1rem solid #ccc;
-  border-radius: .3rem 0 0 .3rem;
-  outline: none;
-  &:focus {
-    border-color: #aaa;
-  }
-}
-
-.button {
-  padding: .3rem .5rem;
-  font-size: 1rem;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 30%;
-  margin: 0;
-  border: none;
-  background: #ccc;
-  border: .1rem solid #ccc;
-  height: 100%;
-  cursor: pointer;
-  &:hover {
-    background: #aaa;
-    border-color: #aaa;
-  }
-}
-
-.button--fullsize {
-  width: 80%;
   margin: 0 auto;
-  display: block;
-  @extend .button--rounded;
 }
 
-.button--rounded {
-  border-radius: .3rem;
-}
-
-.button--rounded-left {
-  border-radius: .3rem 0 0 .3rem;
-}
-
-.button--rounded-right {
-  border-radius: 0 .3rem .3rem 0;
-}
-
-.button--row {
-  margin-top: .3rem;
-  border-radius: .3rem;
-  margin-left: 70%;
-}
+// (1/2) Landscape rules:
 
 @media screen and (orientation: landscape) {
   html {
+    // set up rem unit
     font-size: 1.6vw !important;
   }
-  .form {
+  .title {
+    margin: 0;
+  }
+  .game {
     width: 16rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   body {
-    max-width: 70vw;
+    min-width: auto;
+    width: 70vw;
     margin: 0 auto;
   }
 }

@@ -1,6 +1,6 @@
-import {StateInterface} from '../TypeDeclarations'
+import {State} from '../TypeDeclarations'
 
-export const initialState: StateInterface = {
+export const initialState: State = {
   data: [],
   selected: null,
   totalPokemon: 151,
