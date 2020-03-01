@@ -85,6 +85,7 @@
 }
 
 .stats__stat {
+  font-size: 1em;
   display: block;
   position: relative;
   margin: .5rem;
@@ -95,12 +96,14 @@
   text-align: left;
   position: relative;
   left:0;
+  font-size: 1em;
 }
 
 .stat__value {
   text-align: right;
   position: absolute;
   right: 0;
+  font-size: 1em;
 }
 
 
@@ -130,15 +133,16 @@
     display: block;
     width: 100%;
   }
-
-  
   
   .pokedex-header__title {
     box-sizing: border-box;
-    // line-height: 3.5rem;
-    line-height: 8vh;
+    line-height: 100%;
+    border-bottom: .1rem solid #ccc;
+    // line-height: 1.2vh;
+    width:  60%;
     height: 100%;
     display: inline-block;
+    padding-top: 2.5vh;
     font-size: 3vh;
   }
   
@@ -180,8 +184,10 @@
   }
   
   .stats {
+    font-size: 1.6vw;
     display: block;
     width: 70%;
+    font-size: 1.5vw;
   }
   
   .pokedex__list {
