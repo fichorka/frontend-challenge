@@ -24,6 +24,10 @@ export function togglePokedex() {
   return {type: 'TOGGLE_POKEDEX'}
 }
 
+export function toggleCompleteModal() {
+  return {type: 'TOGGLE_COMPLETE_MODAL'}
+}
+
 export function selectPokemon(id) {
   return {type: 'SELECT_POKEMON', id}
 }

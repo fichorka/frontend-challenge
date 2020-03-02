@@ -29,12 +29,18 @@ export default function(state: State, action): State {
     case 'POKEDEX_IS_COMPLETE':
       return {
         ...state,
-        isPokedexComplete: true
+        isPokedexComplete: true,
+        isCompleteModalVisible: true
       }
     case 'TOGGLE_POKEDEX':
       return {
         ...state,
         isPokedexVisible: !state.isPokedexVisible
+      }
+    case 'TOGGLE_COMPLETE_MODAL':
+      return {
+        ...state,
+        isCompleteModalVisible: !state.isCompleteModalVisible
       }
     case 'SELECT_POKEMON':
       return {

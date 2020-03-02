@@ -1,14 +1,7 @@
 import {useEffect, Dispatch} from 'react'
-import {getGuessedPokemons, getPokemon} from '../Store/selectors'
+import {getGuessedPokemons} from '../Store/selectors'
 import {State} from '../TypeDeclarations'
-import {
-  pokedexIsCompleted,
-  storePokemon,
-  newGuessTarget,
-  continueGame
-} from '../Store/actions'
-import {randomPokemonId} from './Utils'
-import {fetchPokemon} from '../API/fetchPokemon'
+import {pokedexIsCompleted, continueGame} from '../Store/actions'
 
 export default function usePokedexProgress(
   state: State,
@@ -22,9 +15,7 @@ export default function usePokedexProgress(
       state.data.length >= state.totalPokemon &&
       getGuessedPokemons(state).length >= state.totalPokemon
     ) {
-      state.isPokedexComplete
       dispatch(pokedexIsCompleted())
-      state.isPokedexComplete
     } else dispatch(continueGame())
   }, [state.shouldCheckCompletion])
 }

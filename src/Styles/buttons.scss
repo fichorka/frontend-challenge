@@ -33,8 +33,12 @@
   border-radius: 0 .3rem .3rem 0;
 }
 
-.button--row {
+.button--right {
   margin-top: .3rem;
-  border-radius: .3rem;
   margin-left: 70%;
+}
+
+.button--center {
+  display: block;
+  margin: .3rem auto;
 }
