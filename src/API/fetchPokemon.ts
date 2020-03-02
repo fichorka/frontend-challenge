@@ -12,6 +12,7 @@ export function fetchPokemon(id: number): Promise<Pokemon> {
       name: res.name,
       isGuessed: false,
       imageUrl: res.sprites.front_default,
+      shinyImageUrl: res.sprites.front_shiny,
       stats: {
         hp: res.stats.filter(s => s.stat.name === 'hp')[0].base_stat,
         speed: res.stats.filter(s => s.stat.name === 'speed')[0].base_stat,

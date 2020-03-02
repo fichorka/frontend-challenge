@@ -15,6 +15,7 @@ export interface Pokemon {
   name: string
   isGuessed?: boolean
   imageUrl?: string
+  shinyImageUrl?: string
   stats?: {
     hp: number
     speed: number

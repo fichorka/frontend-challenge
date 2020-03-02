@@ -3,7 +3,7 @@ import {State} from '../TypeDeclarations'
 export const initialState: State = {
   data: [],
   selected: null,
-  totalPokemon: 1,
+  totalPokemon: 151,
   guessTarget: null,
   isPokedexComplete: false,
   isPokedexVisible: false,

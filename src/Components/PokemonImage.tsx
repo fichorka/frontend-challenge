@@ -1,7 +1,9 @@
-import React, {createRef, RefObject} from 'react'
-import {Pokemon} from '../TypeDeclarations'
+import React, {createRef, RefObject, useContext} from 'react'
+import {Pokemon, State} from '../TypeDeclarations'
+import {StoreContext} from '../Store'
 
 export default function PokemonImage(props: Props) {
+  const state: State = useContext(StoreContext)[0]
   const {
     pokemon,
     modifier,
@@ -10,8 +12,13 @@ export default function PokemonImage(props: Props) {
     },
     isGuessing
   } = props
-  const {isGuessed, id, imageUrl} = pokemon || {}
-  const finalUrl = isGuessed || isGuessing ? imageUrl : undefined
+  const {isGuessed, id, imageUrl, shinyImageUrl} = pokemon || {}
+  const finalUrl =
+    isGuessed || isGuessing
+      ? state.isPokedexComplete
+        ? shinyImageUrl || imageUrl
+        : imageUrl
+      : undefined
 
   // refObjects used for dom updates
   const imageRef: RefObject<HTMLImageElement> = createRef()
