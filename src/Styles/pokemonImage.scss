@@ -1,9 +1,14 @@
 // (1/2) Portrait rules:
 
 .image-container {
+  background-image: none !important;
   &:hover {
     background: #aaa !important;
   }
+}
+
+.image-container--loading {
+  background: #ccc url("../assets/spinner.gif") no-repeat center/30% !important;
 }
 
 .image-container--game {
@@ -45,12 +50,26 @@
 .image-container__image {
   position: absolute;
   display: block;
+  opacity: 1;
   left: 0;
   top: 0;
   margin: 5%;
   width: 90%;
   height: 90%;
+  transition: all .5s;
 }
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+.image-container__image--loading {
+  opacity: 0 !important;
+}
+
+// img {
+//   transition: opacity .5s;
+// }
 
 // (2/2) Landscape rules:
 

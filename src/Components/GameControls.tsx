@@ -9,11 +9,7 @@ export default function GameControls() {
   return (
     <>
       <GameForm />
-      {pokemon && (
-        <span style={{display: 'block', textAlign: 'center'}}>
-          {pokemon.name}
-        </span>
-      )}
+      {pokemon && <span style={{display: 'block', textAlign: 'center'}}></span>}
       <PokedexButton />
     </>
   )
