@@ -16,7 +16,8 @@ export default function(state: State, action): State {
       return {
         ...state,
         data: newData,
-        isNextPokemonRequested: true
+        shouldCheckCompletion: true,
+        isNextPokemonRequested: false
       }
     }
     case 'NEW_GUESS_TARGET':
@@ -43,7 +44,13 @@ export default function(state: State, action): State {
     case 'NEXT_POKEMON':
       return {
         ...state,
-        isNextPokemonRequested: true
+        shouldCheckCompletion: true
+      }
+    case 'CONTINUE_GAME':
+      return {
+        ...state,
+        isNextPokemonRequested: true,
+        shouldCheckCompletion: false
       }
   }
 }

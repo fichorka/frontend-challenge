@@ -4,6 +4,7 @@ import Game from './Components/Game'
 import Pokedex from './Components/Pokedex'
 import usePokedexProgress from './Hooks/usePokedexProgress'
 import usePokedexVisibility from './Hooks/usePokedexVisibility'
+import usePokemonFetch from './Hooks/usePokemonFetch'
 
 export default function App() {
   const [state, dispatch] = useContext(StoreContext)
@@ -11,6 +12,7 @@ export default function App() {
   // custom hook for handling and syncing changes in state
   usePokedexProgress(state, dispatch)
   usePokedexVisibility(state)
+  usePokemonFetch(state, dispatch)
   return (
     <>
       {!state.isPokedexVisible && <Game />}

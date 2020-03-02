@@ -36,6 +36,7 @@ export default function GameForm() {
       >
         NEXT
       </button>
+      {pokemon ? pokemon.name : ''}
     </form>
   )
 }

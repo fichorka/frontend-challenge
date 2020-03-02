@@ -7,6 +7,7 @@ export interface State {
   isPokedexComplete: boolean
   isPokedexVisible: boolean
   isNextPokemonRequested: boolean
+  shouldCheckCompletion: boolean
 }
 export interface Pokemon {
   id: number

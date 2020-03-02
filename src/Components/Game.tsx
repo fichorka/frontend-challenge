@@ -7,7 +7,7 @@ import GameControls from './GameControls'
 
 export default function Game() {
   const [state, dispatch] = useContext(StoreContext)
-  usePokemonFetch(state, dispatch)
+
   const pokemon = getPokemon(state, state.guessTarget)
   return (
     <div className="game">

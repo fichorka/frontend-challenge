@@ -27,3 +27,7 @@ export function togglePokedex() {
 export function selectPokemon(id) {
   return {type: 'SELECT_POKEMON', id}
 }
+
+export function continueGame() {
+  return {type: 'CONTINUE_GAME'}
+}

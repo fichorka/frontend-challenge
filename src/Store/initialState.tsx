@@ -7,5 +7,6 @@ export const initialState: State = {
   guessTarget: null,
   isPokedexComplete: false,
   isPokedexVisible: false,
-  isNextPokemonRequested: true
+  isNextPokemonRequested: false,
+  shouldCheckCompletion: true
 }
