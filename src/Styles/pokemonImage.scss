@@ -2,9 +2,6 @@
 
 .image-container {
   background-image: none !important;
-  &:hover {
-    background: #aaa !important;
-  }
 }
 
 .image-container--loading {
@@ -33,6 +30,9 @@
   height: 0;
   display: inline-block;
   cursor: pointer;
+  &:hover {
+    background: #aaa !important;
+  }
 }
 
 .image-container.image-container--details {

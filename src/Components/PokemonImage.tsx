@@ -1,6 +1,7 @@
 import React, {createRef, RefObject, useContext} from 'react'
 import {Pokemon, State} from '../TypeDeclarations'
 import {StoreContext} from '../Store'
+import Hint from './Hint'
 
 export default function PokemonImage(props: Props) {
   const state: State = useContext(StoreContext)[0]
@@ -12,7 +13,7 @@ export default function PokemonImage(props: Props) {
     },
     isGuessing
   } = props
-  const {isGuessed, id, imageUrl, shinyImageUrl} = pokemon || {}
+  const {isGuessed, id, name, imageUrl, shinyImageUrl} = pokemon || {}
   const finalUrl =
     isGuessed || isGuessing
       ? state.isPokedexComplete
@@ -42,6 +43,7 @@ export default function PokemonImage(props: Props) {
       }
       onClick={() => handleClick(id)}
     >
+      {modifier === 'game' && <Hint name={name} />}
       <img
         ref={imageRef}
         key={finalUrl + id}
