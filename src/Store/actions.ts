@@ -9,19 +9,15 @@ export function pokemonGuessed(id: number) {
 }
 
 export function newGuessTarget(id: number) {
-  return {type: 'SET_GUESS_TARGET', id: id}
+  return {type: 'NEW_GUESS_TARGET', id: id}
 }
 
-export function nextTurn(shouldTakeNextGuess: boolean) {
-  return {type: 'SHOULD_TAKE_NEXT_GUESS', shouldTakeNextGuess}
+export function nextPokemon() {
+  return {type: 'NEXT_POKEMON'}
 }
 
-export function setIsDataComplete(isDataComplete: boolean) {
-  return {type: 'SET_IS_DATA_COMPLETE', isDataComplete}
-}
-
-export function setIsPokedexComplete(isPokedexComplete: boolean) {
-  return {type: 'SET_IS_POKEDEX_COMPLETE', isPokedexComplete}
+export function pokedexIsCompleted() {
+  return {type: 'POKEDEX_IS_COMPLETE'}
 }
 
 export function togglePokedex() {

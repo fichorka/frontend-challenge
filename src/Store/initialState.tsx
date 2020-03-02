@@ -5,8 +5,7 @@ export const initialState: State = {
   selected: null,
   totalPokemon: 151,
   guessTarget: null,
-  shouldTakeNextGuess: true,
-  isDataComplete: false,
   isPokedexComplete: false,
-  isPokedexVisible: false
+  isPokedexVisible: false,
+  isNextPokemonRequested: true
 }

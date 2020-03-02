@@ -1,4 +1,6 @@
-export default function(state, action) {
+import {State} from '../TypeDeclarations'
+
+export default function(state: State, action): State {
   switch (action.type) {
     case 'ADD_POKEMON':
       return {
@@ -13,28 +15,20 @@ export default function(state, action) {
 
       return {
         ...state,
-        data: newData
+        data: newData,
+        isNextPokemonRequested: true
       }
     }
-    case 'SET_GUESS_TARGET':
+    case 'NEW_GUESS_TARGET':
       return {
         ...state,
-        guessTarget: action.id
+        guessTarget: action.id,
+        isNextPokemonRequested: false
       }
-    case 'SHOULD_TAKE_NEXT_GUESS':
+    case 'POKEDEX_IS_COMPLETE':
       return {
         ...state,
-        shouldTakeNextGuess: action.shouldTakeNextGuess
-      }
-    case 'SET_IS_DATA_COMPLETE':
-      return {
-        ...state,
-        isDataComplete: action.isDataComplete
-      }
-    case 'SET_IS_POKEDEX_COMPLETE':
-      return {
-        ...state,
-        isPokedexComplete: action.isPokedexComplete
+        isPokedexComplete: true
       }
     case 'TOGGLE_POKEDEX':
       return {
@@ -45,6 +39,11 @@ export default function(state, action) {
       return {
         ...state,
         selected: action.id
+      }
+    case 'NEXT_POKEMON':
+      return {
+        ...state,
+        isNextPokemonRequested: true
       }
   }
 }

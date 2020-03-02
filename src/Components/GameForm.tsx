@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import {StoreContext, getPokemon} from '../Store'
-import {nextTurn, pokemonGuessed} from '../Store/actions'
+import {nextPokemon, pokemonGuessed} from '../Store/actions'
 
 export default function GameForm() {
   const [state, dispatch] = useContext(StoreContext)
@@ -10,15 +10,14 @@ export default function GameForm() {
     e.preventDefault()
     if (userInput === pokemon.name) {
       dispatch(pokemonGuessed(pokemon.id))
-      dispatch(nextTurn(true))
       setUserInput('')
     }
   }
   function inputHandler(e) {
     setUserInput(e.target.value)
   }
-  function nextPokemon() {
-    dispatch(nextTurn(true))
+  function handleNextButton() {
+    dispatch(nextPokemon())
     setUserInput('')
   }
   return (
@@ -33,7 +32,7 @@ export default function GameForm() {
       <button
         type="button"
         className="button button--row"
-        onClick={nextPokemon}
+        onClick={handleNextButton}
       >
         NEXT
       </button>

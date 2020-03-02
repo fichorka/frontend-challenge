@@ -4,10 +4,9 @@ export interface State {
   selected: number
   totalPokemon: 151
   guessTarget: number
-  shouldTakeNextGuess: boolean
-  isDataComplete: boolean
   isPokedexComplete: boolean
   isPokedexVisible: boolean
+  isNextPokemonRequested: boolean
 }
 export interface Pokemon {
   id: number

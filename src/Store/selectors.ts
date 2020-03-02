@@ -12,3 +12,7 @@ export function getFullPokemonList(state): Pokemon[] {
   }
   return result
 }
+
+export function getGuessedPokemons(state): Pokemon[] {
+  return state.data.filter(p => p.isGuessed === true)
+}

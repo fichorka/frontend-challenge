@@ -2,11 +2,15 @@ import React, {useContext} from 'react'
 import {StoreContext} from './Store'
 import Game from './Components/Game'
 import Pokedex from './Components/Pokedex'
-import useBodyClass from './Hooks/useBodyClass'
+import usePokedexProgress from './Hooks/usePokedexProgress'
+import usePokedexVisibility from './Hooks/usePokedexVisibility'
 
 export default function App() {
-  const state = useContext(StoreContext)[0]
-  useBodyClass(state.isPokedexVisible)
+  const [state, dispatch] = useContext(StoreContext)
+
+  // custom hook for handling and syncing changes in state
+  usePokedexProgress(state, dispatch)
+  usePokedexVisibility(state)
   return (
     <>
       {!state.isPokedexVisible && <Game />}

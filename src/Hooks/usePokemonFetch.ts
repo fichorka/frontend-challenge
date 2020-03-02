@@ -1,28 +1,23 @@
-import {useEffect} from 'react'
-import {
-  storePokemon,
-  newGuessTarget,
-  nextTurn,
-  setIsDataComplete
-} from '../Store/actions'
+import {useEffect, Dispatch} from 'react'
+import {storePokemon, newGuessTarget} from '../Store/actions'
 import {fetchPokemon} from '../API/fetchPokemon'
 import {randomPokemonId} from './Utils'
 import {getPokemon} from '../Store/selectors'
+import {State} from '../TypeDeclarations'
 
-// controls
-export default function(state, dispatch) {
+export default function(
+  state: State,
+  dispatch: Dispatch<{[key: string]: any}>
+) {
+  // custom hook for picking a random pokemon and fetching it (if necessary)
   useEffect(() => {
-    if (state.shouldTakeNextGuess && !state.isPokedexComplete) {
+    if (state.isNextPokemonRequested && !state.isPokedexComplete) {
       const id = randomPokemonId(state)
       if (!getPokemon(state, id)) {
-        // if pokemon isn't found, fetch it:
-        fetchPokemon(id).then(res => {
-          dispatch(storePokemon(res))
-          if (state.data.length >= 151) dispatch(setIsDataComplete(true))
-        })
+        // if pokemon isn't found in state, fetch it:
+        fetchPokemon(id).then(res => dispatch(storePokemon(res)))
       }
-      dispatch(nextTurn(false))
       dispatch(newGuessTarget(id))
     }
-  }, [state.shouldTakeNextGuess])
+  }, [state.isNextPokemonRequested])
 }

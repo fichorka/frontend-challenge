@@ -9,7 +9,6 @@ export default function Game() {
   const [state, dispatch] = useContext(StoreContext)
   usePokemonFetch(state, dispatch)
   const pokemon = getPokemon(state, state.guessTarget)
-  console.log(state)
   return (
     <div className="game">
       <h1 className="title">GUESS THAT POKEMON!</h1>
