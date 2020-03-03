@@ -16,3 +16,7 @@ export function getFullPokemonList(state): Pokemon[] {
 export function getGuessedPokemons(state): Pokemon[] {
   return state.data.filter(p => p.isGuessed === true)
 }
+
+export function getTotalGuessedPokemon(state): number {
+  return getGuessedPokemons(state).length
+}

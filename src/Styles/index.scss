@@ -75,12 +75,29 @@ body {
   font-weight: bold;
 }
 
+.progress-bar {
+  margin-top: 1rem;
+  width: 100%;
+  background: #888;
+  color: #ddd;
+  position: relative;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.progress-bar__progress {
+  position: absolute;
+  background: #333;
+  width: 0;
+  height: 100%;
+}
+
 // (2/2) Landscape rules:
 
 @media screen and (orientation: landscape) {
   html {
     // set up rem unit
-    font-size: 2.5vh !important;
+    font-size: 2.5vh;
   }
   .title {
     margin: 0;
@@ -108,4 +125,13 @@ body {
   .bio {
     width: 80%;
   }
+
+//   .progress-bar {
+//   width: 100%;
+//   background: #888;
+//   color: #ddd;
+//   position: relative;
+//   text-align: center;
+//   line-height: 5vh
+// }
 }
