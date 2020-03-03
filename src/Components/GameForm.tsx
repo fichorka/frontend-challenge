@@ -8,21 +8,26 @@ export default function GameForm() {
     StoreContext
   )
 
+  // local state
   const [isFetchBusy, setIsFetchBusy] = useState(false)
-  const pokemon = getPokemon(state, state.guessTarget)
   const [userInput, setUserInput] = useState('')
-  function tryToGues(e) {
+
+  const pokemon = getPokemon(state, state.guessTarget)
+
+  function handleSubmit(e) {
     e.preventDefault()
     if (userInput === pokemon.name) {
       dispatch(pokemonGuessed(pokemon.id))
       setUserInput('')
     }
   }
-  function inputHandler(e) {
+
+  function handleChange(e) {
     setUserInput(e.target.value)
   }
+
   function handleNextButton() {
-    // max rate is set to 1/1.25 second
+    // max next rate is set to 1/1.25 second
     if (!isFetchBusy) {
       setIsFetchBusy(true)
 
@@ -35,13 +40,13 @@ export default function GameForm() {
     }
   }
   return (
-    <form className="form" onSubmit={tryToGues}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
         disabled={state.isPokedexComplete}
         className="form__user-input form__user-input--rounded-left"
         type="text"
         value={userInput}
-        onChange={inputHandler}
+        onChange={handleChange}
       />
       <button
         disabled={state.isPokedexComplete}
