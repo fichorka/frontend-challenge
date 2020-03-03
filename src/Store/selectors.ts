@@ -1,6 +1,6 @@
 import {Pokemon, State} from '../TypeDeclarations'
 
-export function getPokemon(state: State, id: number) {
+export function getPokemon(state: State, id: number): Pokemon | undefined {
   return state.data.filter(p => p.id === id)[0]
 }
 

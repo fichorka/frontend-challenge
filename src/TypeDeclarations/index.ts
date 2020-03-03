@@ -1,4 +1,6 @@
-export type StoreT = [State, CallableFunction]
+import {Dispatch} from 'react'
+
+export type StoreT = [State, DispatchT]
 export interface State {
   data: Pokemon[]
   selected: number
@@ -11,8 +13,8 @@ export interface State {
   isCompleteModalVisible: boolean
 }
 export interface Pokemon {
-  id: number
-  name: string
+  id?: number
+  name?: string
   isGuessed?: boolean
   imageUrl?: string
   shinyImageUrl?: string
@@ -23,3 +25,5 @@ export interface Pokemon {
     defense: number
   }
 }
+
+export type DispatchT = Dispatch<{type: string; [key: string]: any}>

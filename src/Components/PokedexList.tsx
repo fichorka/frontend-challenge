@@ -2,9 +2,11 @@ import React, {useContext} from 'react'
 import PokemonImage from './PokemonImage'
 import {StoreContext, getFullPokemonList} from '../Store'
 import {selectPokemon} from '../Store/actions'
+import {StoreT} from '../TypeDeclarations'
 
 export default function PokedexList() {
-  const [state, dispatch] = useContext(StoreContext)
+  const [state, dispatch]: StoreT = useContext(StoreContext)
+
   function handlePokemonClick(id) {
     const p = selectPokemon(id)
     if (p) dispatch(selectPokemon(id))

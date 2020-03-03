@@ -1,9 +1,10 @@
 import React, {useContext} from 'react'
 import {StoreContext} from '../Store'
 import {togglePokedex} from '../Store/actions'
+import {DispatchT} from '../TypeDeclarations'
 
 export default function PokedexButton() {
-  const [state, dispatch] = useContext(StoreContext)
+  const dispatch: DispatchT = useContext(StoreContext)[1]
   function onClick() {
     dispatch(togglePokedex())
   }

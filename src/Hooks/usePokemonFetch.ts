@@ -9,7 +9,7 @@ export default function(
   state: State,
   dispatch: Dispatch<{[key: string]: any}>
 ) {
-  // custom hook for picking a random on pokemon and fetching it (if necessary)
+  // custom hook for picking a random pokemon and fetching it (if not fetched already)
   useEffect(() => {
     if (!state.shouldCheckCompletion && state.isNextPokemonRequested) {
       dispatch(newGuessTarget(null))

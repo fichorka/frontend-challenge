@@ -1,13 +1,10 @@
-import {useEffect, Dispatch} from 'react'
+import {useEffect} from 'react'
 import {getGuessedPokemons} from '../Store/selectors'
-import {State} from '../TypeDeclarations'
+import {State, DispatchT} from '../TypeDeclarations'
 import {pokedexIsCompleted, continueGame} from '../Store/actions'
 
-export default function usePokedexProgress(
-  state: State,
-  dispatch: Dispatch<{[key: string]: any}>
-) {
-  // custom hook for syncing isPokedexComplete property with global state
+export default function usePokedexProgress(state: State, dispatch: DispatchT) {
+  // custom hook for controlling game flow
   useEffect(() => {
     if (
       state.shouldCheckCompletion &&
