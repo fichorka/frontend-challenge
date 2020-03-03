@@ -55,7 +55,7 @@
   margin: 5%;
   width: 90%;
   height: 90%;
-  transition: all .5s;
+  transition: opacity .5s;
 }
 
 img:not([src]) {
@@ -63,7 +63,7 @@ img:not([src]) {
 }
 
 .image-container__image--loading {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 @media screen and (orientation: landscape) {

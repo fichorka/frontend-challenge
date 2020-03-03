@@ -17,7 +17,8 @@ export default function(state: State, action): State {
         ...state,
         data: newData,
         shouldCheckCompletion: true,
-        isNextPokemonRequested: false
+        isNextPokemonRequested: false,
+        guessTarget: null
       }
     }
     case 'NEW_GUESS_TARGET':

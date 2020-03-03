@@ -42,3 +42,8 @@
   display: block;
   margin: .3rem auto;
 }
+
+.button[disabled] {
+  color: #444;
+  background: #ddd;
+}

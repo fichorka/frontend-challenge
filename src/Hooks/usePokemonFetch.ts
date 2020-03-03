@@ -12,6 +12,7 @@ export default function(
   // custom hook for picking a random on pokemon and fetching it (if necessary)
   useEffect(() => {
     if (!state.shouldCheckCompletion && state.isNextPokemonRequested) {
+      dispatch(newGuessTarget(null))
       const id = randomPokemonId(state)
       if (!getPokemon(state, id)) {
         // if pokemon isn't found in state, fetch it:

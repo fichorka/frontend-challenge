@@ -3,21 +3,23 @@ import {Pokemon, State} from '../TypeDeclarations'
 import {StoreContext} from '../Store'
 import Hint from './Hint'
 
-export default function PokemonImage(props: Props) {
+// used by Game, PokedexList and PokedexDetails
+export default function PokemonImage({
+  pokemon,
+  modifier,
+  handleClick = () => {
+    return
+  },
+  isGuessing
+}: Props) {
   const state: State = useContext(StoreContext)[0]
-  const {
-    pokemon,
-    modifier,
-    handleClick = () => {
-      return
-    },
-    isGuessing
-  } = props
   const {isGuessed, id, name, imageUrl, shinyImageUrl} = pokemon || {}
+
+  // if guessing OR guessed get url, else set url to undefined
   const finalUrl =
-    isGuessed || isGuessing
+    isGuessing || isGuessed
       ? state.isPokedexComplete
-        ? shinyImageUrl || imageUrl
+        ? shinyImageUrl
         : imageUrl
       : undefined
 
@@ -32,10 +34,13 @@ export default function PokemonImage(props: Props) {
   }
 
   return (
+    // image-container
     <div
       ref={containerRef}
+      key={id + name}
+      id={name}
       className={
-        finalUrl
+        finalUrl || isGuessing
           ? 'image-container image-container--loading' +
             (modifier ? ' image-container--' + modifier : '')
           : 'image-container' +
@@ -43,7 +48,10 @@ export default function PokemonImage(props: Props) {
       }
       onClick={() => handleClick(id)}
     >
+      {/* hint component */}
       {modifier === 'game' && <Hint name={name} />}
+
+      {/* image */}
       <img
         ref={imageRef}
         key={finalUrl + id}

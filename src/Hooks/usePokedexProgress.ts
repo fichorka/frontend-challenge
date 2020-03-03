@@ -8,7 +8,6 @@ export default function usePokedexProgress(
   dispatch: Dispatch<{[key: string]: any}>
 ) {
   // custom hook for syncing isPokedexComplete property with global state
-  console.log(state)
   useEffect(() => {
     if (
       state.shouldCheckCompletion &&

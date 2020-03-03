@@ -1,18 +1,13 @@
 import React, {useContext} from 'react'
 import StoreContext from '../Store/StoreContext'
 import {getPokemon} from '../Store'
-import usePokemonFetch from '../Hooks/usePokemonFetch'
 import PokemonImage from './PokemonImage'
 import GameControls from './GameControls'
 
 export default function Game() {
-  const [state, dispatch] = useContext(StoreContext)
+  const state = useContext(StoreContext)[0]
 
   const pokemon = getPokemon(state, state.guessTarget)
-
-  // component effects (custom hook)
-  usePokemonFetch(state, dispatch)
-
   return (
     <div className="game">
       <h1 className="title">GUESS THAT POKEMON!</h1>

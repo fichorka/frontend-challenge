@@ -19,6 +19,7 @@ export default function App() {
   // custom hook for handling and syncing changes in state
   usePokedexProgress(state, dispatch)
   useModalVisibility(state, modBgRef)
+  usePokemonFetch(state, dispatch)
   return (
     <>
       {!state.isPokedexVisible && <Game />}
