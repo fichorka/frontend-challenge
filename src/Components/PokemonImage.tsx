@@ -23,6 +23,8 @@ export default function PokemonImage({
         : imageUrl
       : undefined
 
+  const shouldLoadSpinner = finalUrl || (isGuessing && !state.isPokedexComplete)
+
   // refObjects used for dom updates
   const imageRef: RefObject<HTMLImageElement> = createRef()
   const containerRef: RefObject<HTMLDivElement> = createRef()
@@ -40,7 +42,7 @@ export default function PokemonImage({
       key={id + name}
       id={name}
       className={
-        finalUrl || isGuessing
+        shouldLoadSpinner
           ? 'image-container image-container--loading' +
             (modifier ? ' image-container--' + modifier : '')
           : 'image-container' +
@@ -57,7 +59,7 @@ export default function PokemonImage({
         key={finalUrl + id}
         onLoad={onLoadHandler}
         className={
-          finalUrl
+          shouldLoadSpinner
             ? 'image-container__image image-container__image--loading'
             : 'image-container__image'
         }
