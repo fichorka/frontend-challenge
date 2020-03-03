@@ -100,6 +100,22 @@ body {
   width: 100%;
 }
 
+.credits {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: .7rem;
+}
+
+.credits__link {
+  font-weight: bold;
+  text-decoration: none;
+  background: $bg-col5;
+  color: $col3;
+  padding: .3rem .6rem;
+  border-radius: .2rem;
+}
+
 // (2/2) Landscape rules:
 
 @media screen and (orientation: landscape) {

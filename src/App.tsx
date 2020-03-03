@@ -7,6 +7,7 @@ import useModalVisibility from './Hooks/useModalVisibility'
 import usePokemonFetch from './Hooks/usePokemonFetch'
 import CompleteModal from './Components/CompleteModal'
 import {StoreT} from './TypeDeclarations'
+import GitButton from './Components/GitButton'
 
 export default function App() {
   // global state
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <>
       {!state.isPokedexVisible && <Game />}
+      <GitButton />
       <div className="modal-bg" ref={modBgRef}></div>
       {state.isPokedexVisible && <Pokedex />}
       {state.isCompleteModalVisible === true && <CompleteModal />}
