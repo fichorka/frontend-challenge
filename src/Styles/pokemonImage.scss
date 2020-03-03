@@ -15,8 +15,8 @@
   padding: .5rem;
   background: #ccc;
   border-radius: 50%;
-  width: 11rem;
-  height: 11rem;
+  width: 40vw;
+  height: 40vw;
 }
 
 .image-container.image-container--list {
@@ -40,9 +40,8 @@
   box-sizing: border-box;
   background: #ccc;
   border-radius: 50%;
-  padding: 8rem 0 0 0;
-  width: 8rem;
-  // margin: 1rem;
+  padding: 25vh 0 0 0;
+  width: 25vh;
   height: auto;
   display: inline-block;
 }
@@ -67,16 +66,18 @@ img:not([src]) {
   opacity: 0 !important;
 }
 
-// img {
-//   transition: opacity .5s;
-// }
-
-// (2/2) Landscape rules:
-
 @media screen and (orientation: landscape) {
+
+  .image-container--game {
+    width: 25vh;
+    height: 25vh;
+    min-width: 10vw;
+    min-height: 10vw;
+  }
+
   .image-container.image-container--details {
-    padding: 35%;
-    width: 35%;
+    padding-top: 65%;
+    width: 65%;
   }
 
   .image-container.image-container--list {
