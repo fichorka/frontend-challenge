@@ -16,7 +16,7 @@ export default function GameForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (userInput === pokemon.name) {
+    if (userInput.toLowerCase() === pokemon.name) {
       dispatch(pokemonGuessed(pokemon.id))
       setUserInput('')
     }
