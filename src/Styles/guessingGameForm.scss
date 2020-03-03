@@ -1,3 +1,5 @@
+@import 'variables';
+
 // (1/2) Default rules
 
 .form {
@@ -12,10 +14,10 @@
   width: 70%;
   margin: 0;
   border: none;
-  border: .1rem solid #ccc;
+  border: .1rem solid $bg-col2;
   outline: none;
   &:focus {
-    border-color: #aaa;
+    border-color: $bg-col3;
   }
 }
 

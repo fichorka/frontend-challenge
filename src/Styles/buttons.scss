@@ -1,3 +1,5 @@
+@import 'variables';
+
 .button {
   padding: .3rem .5rem;
   font-size: 1rem;
@@ -6,13 +8,18 @@
   width: 30%;
   margin: 0;
   border: none;
-  background: #ccc;
-  border: .1rem solid #ccc;
+  background: $bg-col2;
+  border: .1rem solid $bg-col2;
   height: 100%;
   cursor: pointer;
   &:hover {
-    background: #aaa;
-    border-color: #aaa;
+    background: $bg-col3;
+    border-color: $bg-col3;
+  }
+  &[disabled] {
+    opacity: .7;
+    background-color: $bg-col2;
+    border-color: $bg-col2;
   }
 }
 
@@ -41,9 +48,4 @@
 .button--center {
   display: block;
   margin: .3rem auto;
-}
-
-.button[disabled] {
-  color: #444;
-  background: #ddd;
 }

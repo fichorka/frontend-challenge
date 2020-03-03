@@ -1,9 +1,11 @@
+@import 'variables';
+
 .complete-modal {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #eee;
+  background: $bg-col1;
   padding: 2rem 1rem;
   border-radius: .3rem;
 }
@@ -13,7 +15,7 @@
   margin: 1rem;
   display: block;
   font-size: 1.2rem;
-  color: #888;
+  color: $col2;
 }
 
 .complete-modal__message {
