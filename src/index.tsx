@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import App from './App'
-import './styles/index.scss'
+import './Styles/index.scss'
 import Store from './Store'
 
 const appContainer = document.getElementById('app-container')
