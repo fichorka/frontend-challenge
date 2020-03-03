@@ -23,6 +23,19 @@ body {
   background: #666;
 }
 
+.modal-bg {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: absolute;
+}
+
+.modal-bg--open{
+  display: block;
+  background: #111;
+  opacity: .5;
+}
+
 .title {
   text-align: center;
   font-size: 1.2rem;
@@ -82,8 +95,9 @@ body {
   }
   body {
     min-width: auto;
-    width: 70vw;
-    margin: 0 auto;
+    // width: 70vw;
+    // margin: 0 auto;
+    margin: 0;
   }
   .profile {
     width: 100%;
