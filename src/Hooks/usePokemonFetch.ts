@@ -9,7 +9,7 @@ export default function(
   state: State,
   dispatch: Dispatch<{[key: string]: any}>
 ) {
-  // custom hook for picking a random pokemon and fetching it (if necessary)
+  // custom hook for picking a random on pokemon and fetching it (if necessary)
   useEffect(() => {
     if (!state.shouldCheckCompletion && state.isNextPokemonRequested) {
       const id = randomPokemonId(state)

@@ -9,6 +9,10 @@ export default function Game() {
   const [state, dispatch] = useContext(StoreContext)
 
   const pokemon = getPokemon(state, state.guessTarget)
+
+  // component effects (custom hook)
+  usePokemonFetch(state, dispatch)
+
   return (
     <div className="game">
       <h1 className="title">GUESS THAT POKEMON!</h1>
