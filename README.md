@@ -1,6 +1,7 @@
 # Guess That Pokemon App
 A front-end app for a job application. [PokeAPI](https://pokeapi.co/) is used for data fetching.
-Deployed here [pokemonguessing.netlify.com](https://pokemonguessing.netlify.com/)
+
+Deployed here: [pokemonguessing.netlify.com](https://pokemonguessing.netlify.com/)
 
 ### Usage
 
