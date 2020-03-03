@@ -17,7 +17,9 @@ export default function ProgressBar() {
           width: width
         }}
       ></div>
-      {guessedNum} / {totalPokemon}
+      <span className="progress-bar__value">
+        {guessedNum} / {totalPokemon}
+      </span>
     </div>
   )
 }

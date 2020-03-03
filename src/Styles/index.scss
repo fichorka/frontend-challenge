@@ -73,20 +73,31 @@ body {
 }
 
 .progress-bar {
+  z-index: -2;
   margin-top: 1rem;
   width: 100%;
+  line-height: 2rem;
   background: $bg-col3;
   color: $col3;
   position: relative;
   text-align: center;
-  line-height: 2rem;
+  
 }
 
 .progress-bar__progress {
+  z-index: -1;
   position: absolute;
   background: $bg-col4;
+  top: 0;
   width: 0;
   height: 100%;
+}
+
+.progress-bar__value {
+  // position: absolute;
+  display: block;
+  line-height: 2rem;
+  width: 100%;
 }
 
 // (2/2) Landscape rules:
