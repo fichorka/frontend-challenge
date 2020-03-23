@@ -21,6 +21,13 @@
   }
 }
 
+.form__user-input--invalid {
+  border-color: #f07050;
+  &:focus {
+    border-color: #c02010;
+  }
+}
+
 .form__user-input--rounded-left {
   border-radius: .3rem 0 0 .3rem;
 }

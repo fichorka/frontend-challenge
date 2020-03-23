@@ -11,19 +11,26 @@ export default function GameForm() {
   // local state
   const [isFetchBusy, setIsFetchBusy] = useState(false)
   const [userInput, setUserInput] = useState('')
-
+  const [isInputInvalid, setIsInputInvalid] = useState(false)
   const pokemon = getPokemon(state, state.guessTarget)
 
+  // logic
+  const inputClassModifier = isInputInvalid ? ' form__user-input--invalid' : ''
+
+  // handlers
   function handleSubmit(e) {
     e.preventDefault()
     if (userInput.toLowerCase() === pokemon.name) {
       dispatch(pokemonGuessed(pokemon.id))
       setUserInput('')
+    } else {
+      setIsInputInvalid(true)
     }
   }
 
   function handleChange(e) {
     setUserInput(e.target.value)
+    setIsInputInvalid(false)
   }
 
   function handleNextButton() {
@@ -43,7 +50,9 @@ export default function GameForm() {
     <form className="form" onSubmit={handleSubmit}>
       <input
         disabled={state.isPokedexComplete}
-        className="form__user-input form__user-input--rounded-left"
+        className={
+          'form__user-input form__user-input--rounded-left' + inputClassModifier
+        }
         type="text"
         value={userInput}
         onChange={handleChange}
