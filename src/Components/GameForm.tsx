@@ -37,6 +37,7 @@ export default function GameForm() {
     // max next rate is set to 1/1.25 second
     if (!isFetchBusy) {
       setIsFetchBusy(true)
+      setIsInputInvalid(false)
 
       dispatch(nextPokemon())
       setUserInput('')
