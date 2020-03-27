@@ -16,7 +16,6 @@ html {
 body {
   margin: 0;
   font-family: Roboto, Arial, sans-serif;
-  min-width: 20rem;
   background: $bg-col1;
 }
 
@@ -42,34 +41,6 @@ body {
 .game {
   width: 90%;
   margin: 0 auto;
-}
-
-.profile {
-  margin: .5rem 1rem 1rem;
-  font-size: 2vh;
-}
-
-.bio {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  height: 1.2em;
-  text-align: center;
-  font-size: 1em;
-  line-height: 1.2em;
-  margin: 1em auto 0;
-  white-space: nowrap;
-}
-
-.bio__id {
-  color: $col2;
-  font-size: 1.2em;
-}
-
-.bio__name {
-  color: $col1;
-  font-size: 1.2em;
-  font-weight: bold;
 }
 
 .progress-bar {
@@ -137,16 +108,5 @@ body {
   body {
     min-width: auto;
     margin: 0;
-  }
-
-  .profile {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5vw;
-    margin: .5rem 0 .8rem;
-  }
-
-  .bio {
-    width: 80%;
   }
 }
