@@ -8,7 +8,8 @@ import {State, Pokemon} from '../TypeDeclarations'
 export default function PokedexDetails() {
   const state: State = useContext(StoreContext)[0]
 
-  const selectedPokemon: Pokemon = getPokemon(state, state.selected) || {}
+  let selectedPokemon: Pokemon = getPokemon(state, state.selected) || {}
+  if (!selectedPokemon.isGuessed) selectedPokemon = {}
 
   const {
     id,
