@@ -43,10 +43,9 @@
   font-size: 1.5rem;
   display: inline-block;
   width: 10vw;
-  height: 10vw;
   line-height: 10vw;
-  top: 1vh;
-  right: 1vh;
+  top: 1vw;
+  right: 1vw;
   background: $bg-col2;
   border-radius: 50%;
   color: $col1;
@@ -81,7 +80,7 @@
 
 .stats {
   display: inline-block;
-  width: 40vw;
+  width: 40%;
   margin: 1vw;
   font-size: 3vw;
 }
@@ -144,8 +143,8 @@
     overflow: visible;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    height:80vh;
+    width: 80%;
+    height:80%;
     margin-left: 10vw;
     margin-top: 10vh;
     min-height: 16rem;
@@ -195,12 +194,21 @@
     align-items: space-around;
     justify-content: center;
     width: 40%;
-    height: 80vh;
+    height: 111.11%;
     position: relative;
     bottom: 11.11%; // 10/90 * 100
     border-left: .1rem solid $bg-col2;
     overflow-y: auto;
     min-height: 16rem;
+  }
+
+  .pokedex__list {
+    border: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 100%;
+    overflow-y:scroll;
   }
 
   .profile {
@@ -222,14 +230,5 @@
 
   .bio {
     width: 80%;
-  }
-  
-  .pokedex__list {
-    border: none;
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 60%;
-    height: 100%;
-    overflow-y:scroll;
   }
 }
